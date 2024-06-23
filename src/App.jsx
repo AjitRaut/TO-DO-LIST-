@@ -16,15 +16,18 @@ function App() {
     }
   };
 
-// Delete ToDo
-const DeleteTodo=(index)=>{
-  const confirmed = window.confirm("Are you sure you want to delete this to-do?");
-  if (confirmed) {
-    const DelTodos = items.filter((_, todoIndex) => todoIndex !== index);
-    setitems(DelTodos);
-  }
-};
+  const EditTodo = (index) => {};
 
+  // Delete ToDo
+  const DeleteTodo = (index) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this to-do?"
+    );
+    if (confirmed) {
+      const DelTodos = items.filter((_, todoIndex) => todoIndex !== index);
+      setitems(DelTodos);
+    }
+  };
 
   return (
     <>
@@ -53,7 +56,20 @@ const DeleteTodo=(index)=>{
               <div key={index}>
                 <div className=" flex justify-between py-3 px-8 text-2xl text-black">
                   <span className=" bg-green-400">{item}</span>
-                  <button className=" bg-sky-500 text-base font-extrabold text-white px-2 py-3" onClick={()=>DeleteTodo(index)}>Delete</button>
+                  <div>
+                    <button
+                      className=" bg-sky-500 text-base font-extrabold text-white px-2 py-3"
+                      onClick={() => EditTodo(index)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className=" bg-sky-500 text-base font-extrabold text-white px-2 py-3"
+                      onClick={() => DeleteTodo(index)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
