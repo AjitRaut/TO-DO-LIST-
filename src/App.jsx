@@ -15,10 +15,16 @@ function App() {
       alert(" Add task");
     }
   };
+
+// Delete ToDo
+const DeleteTodo=(index)=>{
+     
+}
+
   return (
     <>
       <div className=" h-screen flex justify-center items-center">
-        <div className=" h-96 w-96 bg-red-200">
+        <div className=" h-auto w-auto bg-red-200">
           <h2 className=" text-center">TO-DO-LIST</h2>
           <div className=" mx-8">
             <input
@@ -40,8 +46,9 @@ function App() {
           <div className=" my-5">
             {items.map((item, index) => (
               <div key={index}>
-                <div className=" py-3 px-8 text-2xl text-black">
-                  <p className=" bg-green-400">{item}</p>
+                <div className=" flex justify-between py-3 px-8 text-2xl text-black">
+                  <span className=" bg-green-400">{item}</span>
+                  <button className=" mr-6" onClick={()=>DeleteTodo(index)}>Delete</button>
                 </div>
               </div>
             ))}
