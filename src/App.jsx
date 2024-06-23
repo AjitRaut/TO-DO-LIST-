@@ -18,9 +18,13 @@ function App() {
 
 // Delete ToDo
 const DeleteTodo=(index)=>{
-  const DelTodos = items.filter((_, todoIndex) => todoIndex !== index);
+  const confirmed = window.confirm("Are you sure you want to delete this to-do?");
+  if (confirmed) {
+    const DelTodos = items.filter((_, todoIndex) => todoIndex !== index);
     setitems(DelTodos);
-}
+  }
+};
+
 
   return (
     <>
