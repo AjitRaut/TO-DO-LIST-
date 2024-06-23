@@ -50,12 +50,12 @@ function App() {
           <h2 className=" text-center">TO-DO-LIST</h2>
           <div className=" mx-8">
             <input
+            placeholder="Enter Your Task"
               className=" outline-none border-none"
-              type="text"
               value={search}
               onChange={(e) => {
                 setsearch(e.target.value);
-                // console.log(search);
+            
               }}
             />
             <button
