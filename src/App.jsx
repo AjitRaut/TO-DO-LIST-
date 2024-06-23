@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
   const [search, setsearch] = useState("");
   const [items, setitems] = useState([]);
 
+useEffect(()=>{
+let todostr= localStorage.getItem("items");
+if(todostr){
+  let item=JSON.parse(localStorage.getItem("items"))
+  setitems(item);
+}
+},[])
+const saveitem=()=>{
+  localStorage.setItem("items",JSON.stringify(items))
+}
+  
   const AddItem = () => {
     // console.log('button clicked')
     if (search !== "") {
@@ -16,7 +27,11 @@ function App() {
     }
   };
 
-  const EditTodo = (index) => {};
+  const EditTodo = (index) => {
+    let edtodo=items.filter((ele,ind)=>ind===index)
+        setsearch(edtodo[index].search)
+
+  };
 
   // Delete ToDo
   const DeleteTodo = (index) => {
@@ -24,7 +39,7 @@ function App() {
       "Are you sure you want to delete this to-do?"
     );
     if (confirmed) {
-      const DelTodos = items.filter((_, todoIndex) => todoIndex !== index);
+      const DelTodos = items.filter((elem, todoIndex) => todoIndex !== index);
       setitems(DelTodos);
     }
   };
