@@ -40,9 +40,9 @@ function App() {
           <div className=" my-5">
             {items.map((item, index) => (
               <div key={index}>
-                <div className=" w-full py-3 px-8 bg-white text-2xl text-black">
-                  {item}
-                </div>
+                <div className=" py-3 px-8 bg-white text-2xl text-black">
+                 <p>{item}
+                 </p>                 </div>
               </div>
             ))}
           </div>
