@@ -5,17 +5,17 @@ function App() {
   const [search, setsearch] = useState("");
   const [items, setitems] = useState([]);
 
-useEffect(()=>{
-let todostr= localStorage.getItem("items");
-if(todostr){
-  let item=JSON.parse(localStorage.getItem("items"))
-  setitems(item);
-}
-},[])
-const saveitem=()=>{
-  localStorage.setItem("items",JSON.stringify(items))
-}
-  
+  useEffect(() => {
+    let todostr = localStorage.getItem("items");
+    if (todostr) {
+      let item = JSON.parse(localStorage.getItem("items"));
+      setitems(item);
+    }
+  }, []);
+  const saveitem = () => {
+    localStorage.setItem("items", JSON.stringify(items));
+  };
+
   const AddItem = () => {
     // console.log('button clicked')
     if (search !== "") {
@@ -28,9 +28,8 @@ const saveitem=()=>{
   };
 
   const EditTodo = (index) => {
-    let edtodo=items.filter((ele,ind)=>ind===index)
-        setsearch(edtodo[index].search)
-
+    let edtodo = items.filter((ele, ind) => ind === index);
+    setsearch(edtodo[index]);
   };
 
   // Delete ToDo
@@ -47,7 +46,7 @@ const saveitem=()=>{
   return (
     <>
       <div className=" h-screen flex justify-center items-center">
-        <div className=" h-auto w-auto bg-red-200">
+        <div className=" h-auto w-auto bg-white shadow-md">
           <h2 className=" text-center">TO-DO-LIST</h2>
           <div className=" mx-8">
             <input
