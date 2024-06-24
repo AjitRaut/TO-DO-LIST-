@@ -1,4 +1,4 @@
-<h2>This is a to do list.Build Using React & Tailwind</h2>
+<h2>This is a to-do list build using React & Tailwind. </h2>
 
 
 # React + Vite
