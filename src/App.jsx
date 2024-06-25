@@ -47,15 +47,14 @@ function App() {
     <>
       <div className=" h-screen flex justify-center items-center">
         <div className=" h-auto w[400px] bg-white shadow-md">
-          <h2 className=" text-center">TO-DO-LIST</h2>
+         
           <div className="mx-8">
             <input
-            placeholder="Enter Your Task"
-              className=" outline-none border-solid w-60"
+              placeholder="Enter Your Task.."
+              className=" outline-none border-solid border-2 border-sky-500 w-60"
               value={search}
               onChange={(e) => {
                 setsearch(e.target.value);
-            
               }}
             />
             <button
