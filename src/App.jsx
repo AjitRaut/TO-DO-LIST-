@@ -46,12 +46,12 @@ function App() {
   return (
     <>
       <div className=" h-screen flex justify-center items-center">
-        <div className=" h-auto w-auto bg-white shadow-md">
+        <div className=" h-auto w[400px] bg-white shadow-md">
           <h2 className=" text-center">TO-DO-LIST</h2>
-          <div className=" mx-8">
+          <div className="mx-8">
             <input
             placeholder="Enter Your Task"
-              className=" outline-none border-none"
+              className=" outline-none border-solid w-60"
               value={search}
               onChange={(e) => {
                 setsearch(e.target.value);
@@ -59,26 +59,26 @@ function App() {
               }}
             />
             <button
-              className=" mx-3 w-18 px-4 bg-fuchsia-500 text-lg rounded-2xl"
+              className=" mx-20 w-18 px-4 bg-red-400 text-lg rounded-lg font-medium"
               onClick={() => AddItem()}
             >
               Add
             </button>
           </div>
-          <div className=" my-5">
+          <div className="my-5">
             {items.map((item, index) => (
-              <div key={index}>
-                <div className=" flex justify-between py-3 px-8 text-2xl text-black">
-                  <span className=" bg-green-400">{item}</span>
+              <div className="m-2" key={index}>
+                <div className=" flex justify-between items-center mx-5">
+                  <p className=" font-semibold">{item}</p>
                   <div>
                     <button
-                      className=" bg-sky-500 text-base font-extrabold text-white px-2 py-3"
+                      className=" bg-sky-500 text-base font-semibold text-white px-2 py-2 rounded-xl"
                       onClick={() => EditTodo(index)}
                     >
                       Edit
                     </button>
                     <button
-                      className=" bg-sky-500 text-base font-extrabold text-white px-2 py-3"
+                      className=" bg-sky-500 text-base font-semibold text-white mx-5 px-2 py-2 rounded-xl"
                       onClick={() => DeleteTodo(index)}
                     >
                       Delete
