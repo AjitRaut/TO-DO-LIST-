@@ -51,14 +51,14 @@ function App() {
           <div className="mx-8">
             <input
               placeholder="Enter Your Task.."
-              className=" outline-none border-solid border-2 border-sky-500 w-60"
+              className=" outline-none border-solid border-2 border-sky-500 px-1 py-1 w-60"
               value={search}
               onChange={(e) => {
                 setsearch(e.target.value);
               }}
             />
             <button
-              className=" mx-20 w-18 px-4 bg-red-400 text-lg rounded-lg font-medium"
+              className=" mx-20 w-18 px-4 bg-red-400 text-lg rounded-md font-medium"
               onClick={() => AddItem()}
             >
               Add
@@ -67,17 +67,17 @@ function App() {
           <div className="my-5">
             {items.map((item, index) => (
               <div className="m-2" key={index}>
-                <div className=" flex justify-between items-center mx-5">
-                  <p className=" font-semibold">{item}</p>
+                <div className=" flex justify-between items-center mx-5 border-b-2">
+                  <p className=" font-semibold px-2 py-2">{item}</p>
                   <div>
                     <button
-                      className=" bg-sky-500 text-base font-semibold text-white px-2 py-2 rounded-xl"
+                      className=" bg-sky-500 text-base font-semibold text-black px-2 py-1 rounded-md"
                       onClick={() => EditTodo(index)}
                     >
                       Edit
                     </button>
                     <button
-                      className=" bg-sky-500 text-base font-semibold text-white mx-5 px-2 py-2 rounded-xl"
+                      className=" bg-sky-500 text-base font-semibold text-black mx-5 px-2 py-1 rounded-md"
                       onClick={() => DeleteTodo(index)}
                     >
                       Delete
