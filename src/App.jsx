@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Header from "./Component/Header";
 
 function App() {
   const [search, setsearch] = useState("");
@@ -45,20 +46,21 @@ function App() {
 
   return (
     <>
-      <div className=" h-screen flex justify-center items-center">
+    <Header />
+      <div className=" mt-48 flex justify-center items-center">
         <div className=" h-auto w[400px] bg-white shadow-md">
          
           <div className="mx-8">
             <input
               placeholder="Enter Your Task.."
-              className=" outline-none border-solid border-2 border-sky-500 px-1 py-1 w-60"
+              className=" outline-none border-solid border-2 border-slate-400 rounded-xl px-2 py-1 w-64"
               value={search}
               onChange={(e) => {
                 setsearch(e.target.value);
               }}
             />
             <button
-              className=" mx-20 w-18 px-4 bg-red-400 text-lg rounded-md font-medium"
+              className=" mx-20 w-18 px-3 py-1 bg-red-400 text-lg rounded-md font-medium"
               onClick={() => AddItem()}
             >
               Add
